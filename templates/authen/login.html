@@ -12,7 +12,7 @@
   <link rel="shortcut icon" type="image/png" href="{% static 'dash/images/logos/favicon.png' %}" />
 
   <!-- Core Css -->
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'dash/css/styles.css' %}" />
 
   <title>MatDash Bootstrap Admin</title>
 </head>
@@ -31,39 +31,26 @@
             <div class="min-vh-100 bg-body row justify-content-center align-items-center p-5">
               <div class="col-12 auth-card">
                 <a href="{% url 'sign_in' %}" class="text-nowrap logo-img d-block w-100">
-                  <img src="{% static 'images/logos/logo-icon.svg' %}" class="dark-logo" alt="Logo-Dark" />
+                  <img src="{% static 'dash/images/logos/logo-icon.svg' %}" class="dark-logo" alt="Logo-Dark" />
                 </a>
-                <h2 class="mb-2 mt-4 fs-7 fw-bolder">Sign In</h2>
-                <p class="mb-9">Your Admin Dashboard</p>
-                <div class="position-relative text-center my-4">
-                  <p class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">
-                    or sign in with
-                  </p>
-                  <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
-                </div>
+                <h2 class="mb-2 mt-4 fs-7 fw-bolder">Войти</h2>
+                <p class="mb-9">Ваша панель администратора</p>
                 <form>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                    <label for="exampleInputEmail1" class="form-label">Логин</label>
+                    <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                   </div>
                   <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <label for="exampleInputPassword1" class="form-label">Пароль</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" />
                   </div>
                   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <div class="form-check">
-                      <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked />
-                      <label class="form-check-label text-dark" for="flexCheckChecked">
-                        Remeber this Device
-                      </label>
-                    </div>
-                    <a class="text-primary fw-medium" href="">Forgot Password ?</a>
+                    <a class="text-primary fw-medium" href="">Забыли пароль ?</a>
                   </div>
-                  <a href="" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
+                  <a href="" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Войти</a>
                   <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-4 mb-0 fw-medium">New to MatDash?</p>
-                    <a class="text-primary fw-medium ms-2" href="">Create an
-                      account</a>
+                    <p class="fs-4 mb-0 fw-medium">Если у вас еще нет аккаунта, пожалуйста</p>
+                    <a class="text-primary fw-medium ms-2" href="">зарегистрируйтесь</a>
                   </div>
                 </form>
               </div>
@@ -99,11 +86,11 @@
   </div>
   <div class="dark-transparent sidebartoggler"></div>
   <!-- Import Js Files -->
-  <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'libs/simplebar/dist/simplebar.min.js' %}"></script>
-  <script src="{% static 'js/theme/app.init.js' %}"></script>
-  <script src="{% static 'js/theme/theme.js' %}"></script>
-  <script src="{% static 'js/theme/app.min.js' %}"></script>
+  <script src="{% static 'dash/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'dash/libs/simplebar/dist/simplebar.min.js' %}"></script>
+  <script src="{% static 'dash/js/theme/app.init.js' %}"></script>
+  <script src="{% static 'dash/js/theme/theme.js' %}"></script>
+  <script src="{% static 'dash/js/theme/app.min.js' %}"></script>
 
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
