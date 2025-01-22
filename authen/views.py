@@ -75,3 +75,8 @@ def sign_up(request):
     
     return render(request, 'authen/register.html', context)
 
+
+@login_required
+def logout_user(request):
+    logout(request)
+    return redirect("/")
