@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from authen.models import CustomUser
+from authen.models import CustomUser, Gender
 
+
+admin.site.register(Gender)
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser

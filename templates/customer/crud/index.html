@@ -1,0 +1,163 @@
+{% extends  'base.html' %}
+{% load static %}
+{% block title %} <title>Клиенты</title> {% endblock %}
+
+{% block content %}
+  
+<div class="card w-100 position-relative overflow-hidden">
+    <div class="px-4 py-3 border-bottom">
+        <div class="row">
+            <div class="col-lg-10">
+              <h4 class="card-title mb-0">Клиенты</h4>
+            </div>
+            <div class="col-lg-2 text-end">
+              <a href="{% url 'customer_create' %}" type="button" class="btn btn-success">Создать</a>
+            </div>
+          </div>
+    </div>
+
+    
+
+    <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="mb-3">
+                  <label class="form-label">Поиск</label>
+                  <input type="text" id="search" class="form-control" placeholder="Введите слово"/>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="mb-3">
+                  <label class="form-label">Группы</label>
+                  <select class="form-select">
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="mb-3">
+                  <label class="form-label">Пол</label>
+                  <select class="form-select">
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="mb-3">
+                  <label class="form-label">Год рождения</label>
+                  <input type="text" id="birth_year" class="form-control" placeholder=""/>
+              </div>
+            </div>
+  
+  
+            <div class="col-12">
+              <div class="d-md-flex align-items-center">
+                <div class="form-check ms-auto">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckUnpaidLessons" />
+                  <label class="form-check-label" for="flexCheckUnpaidLessons">
+                    Есть неоплаченные занятия
+                  </label>
+                </div>
+                <div class="form-check ms-auto">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckNoGroup" />
+                  <label class="form-check-label" for="flexCheckNoGroup">
+                    Без группы
+                  </label>
+                </div>
+                <div class="form-check ms-auto">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckNegativeBalance" />
+                  <label class="form-check-label" for="flexCheckNegativeBalance">
+                    Отрицательный баланс
+                  </label>
+                </div>
+  
+                <div class="ms-auto mt-3 mt-md-0">
+                  <button type="submit" class="btn btn-primary hstack gap-6">
+                    <i class="ti ti-send fs-4"></i>
+                    Фильтровать
+                  </button>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+    <div class="card-body p-4">
+        <!-- Выполнить -->
+    <div class="btn-group mb-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-expanded="false">
+          Выполнить
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
+          <li>
+            <a class="dropdown-item" href="javascript:void(0)" id="deleteSelected">Удалить</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="javascript:void(0)" id="subscriptionButton">Выдать абонемент</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="table-responsive mb-4 border rounded-1">
+        <table class="table text-nowrap mb-0 align-middle">
+            <thead class="text-dark fs-4">
+                <tr>
+                  <th>
+                    <input type="checkbox" id="selectAll" />
+                  </th>
+                  <th>ФИО</th>
+                  <th>Год рождения</th>
+                  <th>Телефон</th>
+                  <th>Баланс</th>
+                  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" class="select-client" value="{{ client.id }}" />
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="{% static 'dash/images/profile/user-10.jpg' %}" class="rounded-circle" width="40" height="40" />
+                      <div class="ms-3">
+                        <h6 class="fs-4 fw-semibold mb-0">Ibrokhim</h6>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="mb-0 fw-normal">1999-25-26</p>
+                  </td>
+                  <td>
+                    <p class="mb-0 fw-normal">+9989712345678</p>
+                  </td>
+                  <td>
+                    <p class="mb-0 fw-normal">0</p>
+                  </td>
+                  <td>
+      
+      
+                    <div class="row">
+                      <div class="col-md-3">
+                          <button type="button" class="btn btn-sm btn-danger btn-delete-client" data-client-id="{{ client.id }}">
+                            <i class="ti ti-trash fs-5"></i>
+                          </button>
+                          <a type="button" class="btn btn-sm btn-primary" href="#">
+                            <i class="ti ti-edit fs-5"></i>
+                          </a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

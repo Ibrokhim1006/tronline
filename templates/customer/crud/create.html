@@ -1,0 +1,160 @@
+{% extends  'base.html' %}
+{% load static %}
+{% block title %} <title>Создать клиента</title> {% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+              <!-- start Person Info -->
+              <div class="card">
+                <div class="card-header text-bg-primary">
+                  <h4 class="mb-0 text-white">Создать клиента</h4>
+                </div>
+  
+                <!-- Форма-->
+                <form action="" method="post">
+                  <div>
+                    <div class="card-body">
+                      <h4 class="card-title">Личная информация</h4>
+  
+                      <div class="row pt-3">
+  
+                        <!--ФИО-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">ФИО</label>
+                            <input type="text" id="full_name" name="full_name" class="form-control" placeholder="ФИО" value="{{ client.full_name }}"/>
+                          </div>
+                        </div>
+                        <!--Телефон-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Телефон</label>
+                            <input type="text" id="phone" name="phone" class="form-control international-inputmask" placeholder="" inputmode="text" value="12345678901"/>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <!--Пол-->
+                        <div class="col-md-6">
+                          <div class="mb-3 has-success">
+                            <label class="form-label">Пол</label>
+                            <select class="form-select" id="gender" name="gender">
+                              <option value="Мужской" selected>Мужской</option>
+                              <option value="Женский">Женский</option>
+                            </select>
+                          </div>
+                        </div>
+                        <!--День рождения-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">День рождения</label>
+                            <input type="date" id="birth_date" name="birth_date" class="form-control" value="1990-01-01"/>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <!--Адрес-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Адрес</label>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Адрес" value="ул. Пушкина, д. Колотушкина"/>
+                          </div>
+                        </div>
+                        <!--Эл. почта-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="example@mail.com"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <hr />
+                    <div class="card-body">
+                      <h4 class="card-title mb-4">Доп информация</h4>
+  
+                      <div class="row">
+                        <!--Номер договора-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Номер договора</label>
+                            <input type="text" id="contract_number" name="contract_number" class="form-control" value="12345"/>
+                          </div>
+                        </div>
+                        <!--Тип договора-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Тип договора</label>
+                            <input type="text" id="contract_type" name="contract_type" class="form-control" value="Обучение"/>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <!--Дата начала обучения-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Дата начала обучения</label>
+                            <input type="date" id="start_date" name="start_date" class="form-control" value="2025-01-01"/>
+                          </div>
+                        </div>
+                        <!--Группы-->
+                        <div class="col-md-6">
+                          <div class="mb-3 has-success">
+                            <label class="form-label">Группы</label>
+                            <select class="form-select" id="group" name="group">
+                              <option value="Группа 1" selected>Группа 1</option>
+                              <option value="Группа 2">Группа 2</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <!--Спортивный разряд-->
+                        <div class="col-md-6">
+                          <div class="mb-3 has-success">
+                            <label class="form-label">Спортивный разряд</label>
+                            <select class="form-select" id="sport_rank" name="sport_rank">
+                              <option value="Спортивный разряд 1">Спортивный разряд 1</option>
+                              <option value="Спортивный разряд 2">Спортивный разряд 2</option>
+                            </select>
+                          </div>
+                        </div>
+                        <!--Фото-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Фото</label>
+                            <input type="file" id="photo" name="photo" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="form-actions">
+                      <div class="card-body border-top">
+                        <button type="button" class="btn btn-primary" id="buttonSave">
+                          Сохранить
+                        </button>
+                        <button type="button" class="btn bg-danger-subtle text-danger ms-6">
+                          Отмена
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+  
+              </div>
+              <!-- end Person Info -->
+            </div>
+  </div>
+  
+
+
+
+{% endblock %}
