@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'authen',
     'supervisor',
     'custumer',
-    'employe'
+    'employe',
+    'groups_custumer',
 ]
 
 MIDDLEWARE = [

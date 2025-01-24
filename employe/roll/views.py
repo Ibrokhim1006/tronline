@@ -20,7 +20,7 @@ def employe_roll_create(request):
     permissions = Permission.objects.none()
 
     for app_config in apps.get_app_configs():
-        if app_config.label in ['customer', 'employe']:
+        if app_config.label in ['customer', 'employe', 'groups_custumer']:
             for model in app_config.get_models():
                 content_type = ContentType.objects.get_for_model(model)
                 model_permissions = Permission.objects.filter(content_type=content_type)
@@ -51,7 +51,7 @@ def employe_roll_update(request, pk):
     permissions = Permission.objects.none()
 
     for app_config in apps.get_app_configs():
-        if app_config.label in ['customer', 'employe']:
+        if app_config.label in ['customer', 'employe', 'groups_custumer']:
             for model in app_config.get_models():
                 content_type = ContentType.objects.get_for_model(model)
                 model_permissions = Permission.objects.filter(content_type=content_type)
