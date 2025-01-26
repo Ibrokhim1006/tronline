@@ -1,0 +1,93 @@
+{% extends  'base.html' %}
+{% load static %}
+{% block title %} <title>Выдать абонемент</title> {% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+              <!-- start Person Info -->
+              <div class="card">
+                <div class="card-header text-bg-primary">
+                  <h4 class="mb-0 text-white">Выдать абонемент</h4>
+                </div>
+  
+                <!-- Форма-->
+                <form action="" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div>
+                    <div class="card-body">
+                      <p class="text-danger">{{error}}</p>
+                      <div class="row pt-3">
+  
+                        <!--ФИО-->
+                        <div class="col-md-6">
+                            <div class="mb-3 has-success">
+                                <label class="form-label">Группы в которых действует</label>
+                                <select class="form-select" id="group" name="group">
+                                    <option value="">Выберите группу</option>
+                                  {% for item in groups %}
+                                    <option value="{{item.id}}">{{item.name}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+                        </div>
+                        <!--Телефон-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Количество занятий</label>
+                            <input type="number" id="number" name="number" class="form-control international-inputmask" value="{{ form_data.phone }}"/>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <!--Пол-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Дата начала</label>
+                                <input type="date" id="start_date" name="start_date" class="form-control" value="{{ form_data.start_date }}"/>
+                              </div>
+                        </div>
+                        <!--День рождения-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <label class="form-label">Дата окончания</label>
+                            <input type="date" id="end_date" name="end_date" class="form-control" value="{{ form_data.end_date }}"/>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="row">
+                        <!--Адрес-->
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="unlimited" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Безлимитный</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="form-actions">
+                      <div class="card-body border-top">
+                        <button type="submit" class="btn btn-primary" id="buttonSave">
+                          Сохранить
+                        </button>
+                        <a href="{% url 'custumer_subscriptions' cutumer.id %}" class="btn bg-danger-subtle text-danger ms-6">
+                          Отмена
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+  
+              </div>
+              <!-- end Person Info -->
+            </div>
+  </div>
+  
+
+
+
+{% endblock %}
